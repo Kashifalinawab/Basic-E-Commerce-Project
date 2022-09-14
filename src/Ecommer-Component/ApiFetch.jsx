@@ -1,6 +1,6 @@
 import React from "react";
 import "./cart.css"
-import { FaShoppingCart } from "react-icons/fa";
+import { BsCart4 } from "react-icons/bs";
 import { Link, } from "react-router-dom"
 
 
@@ -17,7 +17,7 @@ function ApiFetch({ products, addeditems }) {
 
         <div id="cartIconDiv" ><h1 id="webSiteName">Shopping Website</h1>
             <Link to="/Cart">
-                <h1 id="cartIcon"><FaShoppingCart /></h1>
+                <h1 id="cartIcon"><BsCart4 /></h1>
             </Link>
 
 
@@ -29,7 +29,7 @@ function ApiFetch({ products, addeditems }) {
                     <div id="parentDiv" key={product.id}>
                         <h4 id="h4Id">Product No: {product.id}</h4>
                         <div id="imageDiv">
-                            <img src={product.image} alt="Cart Products" id="image" />
+                            <img src={product.thumbnail} alt="Cart Products" id="image" />
                         </div>
                         <div id="info">
                             <ul id="data">
@@ -37,10 +37,16 @@ function ApiFetch({ products, addeditems }) {
                                     Category: {product.category}
                                 </li>
                                 <li>
+                                    Brand: {product.brand}
+                                </li>
+                                <li>
                                     Title: {product.title}
                                 </li>
                                 <li>
                                     Price: {product.price} {`$`}
+                                </li>
+                                <li>
+                                    Rating:{product.rating} {`  Out of 5`}
                                 </li>
                             </ul>
                             <div>
