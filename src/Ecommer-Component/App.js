@@ -31,7 +31,7 @@ function App() {
           path="/"
           element={<ApiFetch products={products} addeditems={addeditems} />}
         />
-        <Route path="cart" element={<Cart cart={cart} />} />
+        <Route path="cart" element={<Cart cart={cart} setCart={setCart} />} />
       </Routes>
     </>
   );

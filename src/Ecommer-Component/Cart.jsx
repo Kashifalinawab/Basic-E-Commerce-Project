@@ -7,19 +7,25 @@ import { RiDeleteBin5Line } from "react-icons/ri";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-function Cart({ cart }) {
-  console.log(cart);
-  const [list, setList] = useState(cart);
-  console.log("---list---");
-  console.log(list);
+function Cart({ cart, setCart }) {
+  // console.log(cart);
+
+  // const [list, setList] = useState(cart);
+  // console.log("---list---");
+  // console.log(list);
 
   // console.log(cart);
 
   const deleteEvent = (shop) => {
     // alert(shop);
-    const newList = list.filter((id) => id !== shop);
-    setList(newList);
+    const newList = cart.filter((id) => id !== shop);
+    setCart(newList);
   };
+
+  // const clearCart = () => {
+  // setList([]);
+  // console.log("kk");
+  // };
 
   return (
     <div id="mCartDiv">
@@ -33,7 +39,8 @@ function Cart({ cart }) {
       </div>
       {
         <div id="beforeMap">
-          {list.map((shop) => {
+          {/* <button onClick={clearCart}>Clear Cart</button> */}
+          {cart.map((shop) => {
             return (
               <div id="mapCartDiv">
                 <h4>Brand: {shop.brand}</h4>
